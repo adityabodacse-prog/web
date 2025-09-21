@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { AlertTriangle, CheckCircle, Clock, MapPin, Filter, Search } from 'lucide-react'
 import { useAlerts } from '../hooks/useAlerts'
