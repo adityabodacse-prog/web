@@ -19,7 +19,7 @@ export function RealtimeChart({ data, parameter, title, unit, color = '#0ea5e9' 
       timestamp: reading.timestamp
     }))
 
-  const formatTooltip = (value: any, name: string) => {
+  const formatTooltip = (value: any) => {
     return [`${value} ${unit}`, title]
   }
 
