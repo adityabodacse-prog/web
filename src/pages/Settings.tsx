@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Settings as SettingsIcon, User, Bell, Globe, Shield, Database } from 'lucide-react'
+import { User, Bell, Globe, Shield, Database } from 'lucide-react'
 import { useAuth } from '../hooks/useAuth'
 
 export function Settings() {

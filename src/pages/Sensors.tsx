@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Radio, MapPin, Clock, Activity, AlertCircle } from 'lucide-react'
+import { Radio, MapPin, Clock } from 'lucide-react'
 import { SensorMap } from '../components/Sensors/SensorMap'
 import { RealtimeChart } from '../components/Dashboard/RealtimeChart'
 import { useSensorData } from '../hooks/useSensorData'
