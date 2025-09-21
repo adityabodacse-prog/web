@@ -21,7 +21,6 @@ export function ReportGenerator() {
     setGenerating(true)
     try {
       const pdf = new jsPDF()
-      const pageWidth = pdf.internal.pageSize.getWidth()
       const pageHeight = pdf.internal.pageSize.getHeight()
       
       // Title
