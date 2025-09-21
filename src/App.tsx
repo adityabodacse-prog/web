@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Header } from './components/Layout/Header'
 import { Sidebar } from './components/Layout/Sidebar'
 import { LoginForm } from './components/Auth/LoginForm'
+import { LoadingSpinner } from './components/Common/LoadingSpinner'
 import { Dashboard } from './pages/Dashboard'
 import { Sensors } from './pages/Sensors'
 import { Alerts } from './pages/Alerts'
@@ -38,7 +39,10 @@ function App() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-ocean-600"></div>
+        <div className="text-center">
+          <LoadingSpinner size="lg" />
+          <p className="mt-4 text-gray-600">Loading Aqua Alert...</p>
+        </div>
       </div>
     )
   }
