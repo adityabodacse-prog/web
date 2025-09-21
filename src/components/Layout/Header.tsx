@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { Bell, Globe, LogOut, Settings, User, Wifi, WifiOff } from 'lucide-react'
+import { Bell, Globe, LogOut, User, Wifi, WifiOff } from 'lucide-react'
 import { useAuth } from '../../hooks/useAuth'
 import { useAlerts } from '../../hooks/useAlerts'
 import { useOfflineData } from '../../hooks/useOfflineData'

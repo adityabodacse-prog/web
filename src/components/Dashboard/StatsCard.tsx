@@ -1,9 +1,9 @@
-import { DivideIcon as LucideIcon } from 'lucide-react'
+import React from 'react'
 
 interface StatsCardProps {
   title: string
   value: string | number
-  icon: LucideIcon
+  icon: React.ElementType
   trend?: {
     value: number
     isPositive: boolean
