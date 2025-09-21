@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Download, FileText } from 'lucide-react'
 import jsPDF from 'jspdf'
-import html2canvas from 'html2canvas'
 import { SensorReading, HazardAlert } from '../../lib/supabase'
 import { useSensorData } from '../../hooks/useSensorData'
 import { useAlerts } from '../../hooks/useAlerts'
@@ -38,12 +37,12 @@ export function ReportGenerator() {
       const endDate = new Date(dateRange.end)
       endDate.setHours(23, 59, 59, 999)
       
-      const filteredReadings = readings.filter(reading => {
+      const filteredReadings: SensorReading[] = readings.filter(reading => {
         const readingDate = new Date(reading.timestamp)
         return readingDate >= startDate && readingDate <= endDate
       })
       
-      const filteredAlerts = alerts.filter(alert => {
+      const filteredAlerts: HazardAlert[] = alerts.filter(alert => {
         const alertDate = new Date(alert.created_at)
         return alertDate >= startDate && alertDate <= endDate
       })
