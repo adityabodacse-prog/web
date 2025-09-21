@@ -6,7 +6,6 @@ import {
   Home, 
   Radio, 
   Settings,
-  Shield,
   Activity
 } from 'lucide-react'
 import { useAuth } from '../../hooks/useAuth'

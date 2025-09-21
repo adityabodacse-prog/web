@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Download, FileText, Calendar, Filter } from 'lucide-react'
+import { Download, FileText } from 'lucide-react'
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
 import { SensorReading, HazardAlert } from '../../lib/supabase'
