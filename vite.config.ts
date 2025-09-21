@@ -1,9 +1,12 @@
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    splitVendorChunkPlugin(), // auto-split vendor chunks
+  ],
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
@@ -12,10 +15,29 @@ export default defineConfig({
   },
   server: {
     port: 5173,
-    host: true
+    host: true,
   },
   build: {
     outDir: 'dist',
-    sourcemap: true
-  }
+    sourcemap: true,
+    chunkSizeWarningLimit: 1000, // raise limit (optional)
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'react-vendor'
+            }
+            if (id.includes('chart.js')) {
+              return 'chart-vendor'
+            }
+            if (id.includes('lodash')) {
+              return 'lodash-vendor'
+            }
+            return 'vendor' // everything else from node_modules
+          }
+        },
+      },
+    },
+  },
 })
